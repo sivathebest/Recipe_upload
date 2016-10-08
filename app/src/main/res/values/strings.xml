@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Sivakumar</string>
+    <string name="recipe_upload">Recipe Upload</string>
+    <string name="back_bud">Cancel</string>
+    <string name="cancel">Cancel</string>
+
+    <string-array name = "recipe_type">
+        <item>Choose your recipe type</item>
+        <item>American</item>
+        <item>Asian</item>
+        <item>Barbeque/Grill</item>
+        <item>Crock Pot</item>
+        <item>Italian</item>
+        <item>Mexican</item>
+
+        </string-array>
+    <string-array name = "serves">
+        <item>Serves</item>
+        <item>1 Person</item>
+        <item>2 People</item>
+        <item>3 People</item>
+        <item>4 People</item>
+        <item>5 People</item>
+
+    </string-array>
+</resources>

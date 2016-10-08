@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.chefling.android.sivakumar.MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rel_master"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/action_bar">
+
+        <TextView
+            android:text="@string/back_bud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel"
+            android:paddingLeft="6dp"
+            android:textSize="14dp"
+            android:textColor="@color/text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:text="@string/recipe_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="16dp"
+            android:textColor="@color/text"
+            android:layout_alignBaseline="@+id/cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="252dp"
+        app:srcCompat="@drawable/photo_img_bg"
+        android:id="@+id/quick_start_cropped_image"
+        android:layout_below="@id/action_bar"
+        android:onClick="onSelectImageClick"
+        android:scaleType="fitXY"
+              />
+
+    <EditText
+        android:hint="Type the recipe name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:padding="14dp"
+        android:id="@+id/recipe_name"
+        android:textSize="16dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/dotted"
+        android:textColor="@color/text_black"
+        android:layout_below="@id/quick_start_cropped_image"
+
+
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="Choose your recipe typw"
+        android:layout_marginRight="16dp"
+        android:padding="14dp"
+        android:id="@+id/recipe_type"
+        android:textSize="16dp"
+        android:entries="@array/recipe_type"
+
+        android:gravity="center"
+        android:background="@drawable/dotted"
+        android:textColor="@color/text_black"
+        android:layout_below="@+id/recipe_name"
+        android:layout_centerHorizontal="true" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/radio_group"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:weightSum="3"
+        android:layout_below="@+id/recipe_type"
+        >
+
+
+        <RadioButton android:id="@+id/beginner"
+            android:text="Beginner"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:checked="true"
+            android:layout_height="45dp"
+            android:background="@drawable/button_style2"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/text_black"
+            android:textAllCaps="false"/>
+
+        <RadioButton android:id="@+id/sous_chef"
+             android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="Sous Chef"
+            android:background="@drawable/button_style2"
+            android:button="@android:color/transparent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:textAllCaps="false"/>
+
+        <RadioButton
+            android:id="@+id/master"
+            android:background="@drawable/button_style2"
+            android:button="@android:color/transparent"
+             android:layout_marginLeft="10dp"
+            android:text="Master"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="@color/text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:textAllCaps="false"/>
+
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:weightSum="2"
+        android:id="@+id/serve_time"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/radio_group">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="15dp"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/serve_person"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="12sp"
+                android:id="@+id/serves"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/dotted"
+                android:textColor="@color/text_black"
+                android:gravity="center_vertical"
+
+                >
+
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/clock"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center_horizontal"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="14dp"
+                android:layout_marginLeft="7dp"
+                android:gravity="center"
+                android:text="Cooking Time"
+
+                android:id="@+id/time_picker"
+                android:background="@drawable/dotted"
+                android:textColor="@color/text_black"
+                android:textAllCaps="false"
+
+                >
+
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:minHeight="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:hint="Notes, Tell us the story behind it."
+        android:padding="7dp"
+        android:background="@drawable/dotted"
+        android:textColor="@color/text_black"
+        android:inputType="textMultiLine"
+        android:textSize="16dp"
+        android:gravity="center_horizontal"
+        android:isScrollContainer="true"
+        android:layout_below="@+id/serve_time"
+        android:id="@+id/desc" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/desc"
+             android:textSize="14dp"
+            android:id="@+id/next"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textAllCaps="false"
+            android:background="@drawable/next"
+            />
+
+    </RelativeLayout>
+</ScrollView>
