@@ -1,2 +1,2 @@
 ##Recipe Upload##
-Recipe Upload is one page simple application.
+Recipe Upload is one page simple application. 
